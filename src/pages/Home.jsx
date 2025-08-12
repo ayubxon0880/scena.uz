@@ -57,7 +57,7 @@ export default function Home() {
                 </div>
                 <div className="p-4">
                     <p className="text-gray-700 text-xl">
-                        Приглашаем к сотрудничеству психологов, психотерапевтов, психиатров и организации. Предлагаем удобную платформу для работы, продвижение и поддержку.
+                        Приглашаем к сотрудничеству психологов, психотерапевтов, психиатров и организации.Предлагаем удобную платформу для работы, продвижение и поддержку.
                     </p>
                     <br></br>
                     <p className="text-gray-700 text-xl">
@@ -67,38 +67,38 @@ export default function Home() {
             </section>
 
 
+            <section className="max-w-3xl mx-auto space-y-4">
+                <h2 className="font-semibold mb-4 text-center">
+                    Добавить себя или стать партнером
+                </h2>
 
-            {/*<section className="text-center text-sm text-gray-700 max-w-2xl mx-auto">*/}
-            {/*    Приглашаем к сотрудничеству психологов, психотерапевтов,*/}
-            {/*    психиатров и организации. Предлагаем удобную платформу для работы,*/}
-            {/*    продвижения и поддержки.*/}
-            {/*    <br />*/}
-            {/*    Напишите нам — обсудим детали!*/}
-            {/*</section>*/}
+                <div className="flex flex-col md:flex-row gap-4">
+                    {/* Chap tomonda textarea */}
+                    <textarea
+                        placeholder="О себе..."
+                        className="w-full md:w-1/2 border rounded-lg p-3 focus:outline-none"
+                        rows={6}
+                    />
 
-            {/*<section className="max-w-xl mx-auto space-y-4">*/}
-            {/*    <h2 className="font-semibold mb-4 text-center">*/}
-            {/*        Добавить себя или стать партнером*/}
-            {/*    </h2>*/}
-            {/*    <textarea*/}
-            {/*        placeholder="О себе..."*/}
-            {/*        className="w-full border rounded-lg p-3 focus:outline-none"*/}
-            {/*        rows={4}*/}
-            {/*    />*/}
-            {/*    <input*/}
-            {/*        type="text"*/}
-            {/*        placeholder="Ф.И.О"*/}
-            {/*        className="w-full border rounded-lg p-3 focus:outline-none"*/}
-            {/*    />*/}
-            {/*    <input*/}
-            {/*        type="tel"*/}
-            {/*        placeholder="Номер телефона"*/}
-            {/*        className="w-full border rounded-lg p-3 focus:outline-none"*/}
-            {/*    />*/}
-            {/*    <button className="w-full bg-[#4B3A34] text-white py-2 rounded-lg hover:bg-[#3c2d28]">*/}
-            {/*        отправить*/}
-            {/*    </button>*/}
-            {/*</section>*/}
+                    {/* O'ng tomonda inputlar */}
+                    <div className="flex flex-col gap-4 w-full md:w-1/2">
+                        <input
+                            type="text"
+                            placeholder="Ф.И.О"
+                            className="w-full border rounded-lg p-3 focus:outline-none"
+                        />
+                        <input
+                            type="tel"
+                            placeholder="Номер телефона"
+                            className="w-full border rounded-lg p-3 focus:outline-none"
+                        />
+                        <button className="w-full bg-[#4B3A34] text-white py-2 rounded-lg hover:bg-[#3c2d28]">
+                            отправить
+                        </button>
+                    </div>
+                </div>
+            </section>
+
         </div>
     );
 }

@@ -48,7 +48,7 @@ export default function TopSpecialists() {
                 Топ 3 <span className="font-normal">специалиста недели</span>
             </h1>
 
-            <div className="bg-[#F6F3F0] rounded-[30px] p-6 flex items-center space-x-6 relative w-[700px] h-[400px] shadow-sm">
+            <div className="bg-[#F6F3F0] rounded-[100px] p-6 flex items-center space-x-6 relative w-[1200px] h-[700px] shadow-sm">
                 <button
                     onClick={handlePrev}
                     className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border flex items-center justify-center bg-white hover:bg-gray-200"
@@ -59,7 +59,7 @@ export default function TopSpecialists() {
                 <img
                     src={current.img}
                     alt={current.name}
-                    className="w-60 h-72 object-cover rounded-[20px]"
+                    className="w-96 h-[600px] object-cover rounded-[30px]"
                 />
 
                 <div className="flex-1 relative">
