@@ -1,12 +1,54 @@
 import TopSpecialists from "../components/Home/TopSpecialists.jsx";
 
 const specialists = [
-    { name: "Алия Курбанова", img: "/images/doctor.png" , description: "Психотерапевт, Ташкент 10 лет опыта · Онлайн и офлайн · Специализация: тревожность, депрессия, семейные конфликты" },
-    { name: "Али Курбанов", img: "/images/doctor.png" , description: "Психотерапевт, Ташкент 10 лет опыта · Онлайн и офлайн · Специализация: тревожность, депрессия, семейные конфликты"},
-    { name: "Иван Петров", img: "/images/doctor.png" , description: "Психотерапевт, Ташкент 10 лет опыта · Онлайн и офлайн · Специализация: тревожность, депрессия, семейные конфликты"},
-    { name: "Мария Смирнова", img: "/images/doctor.png" , description: "Психотерапевт, Ташкент 10 лет опыта · Онлайн и офлайн · Специализация: тревожность, депрессия, семейные конфликты"},
-    { name: "Алина Ким", img: "/images/doctor.png" , description: "Психотерапевт, Ташкент 10 лет опыта · Онлайн и офлайн · Специализация: тревожность, депрессия, семейные конфликты"},
-    { name: "Али Курбанов", img: "/images/doctor.png" , description: "Психотерапевт, Ташкент 10 лет опыта · Онлайн и офлайн · Специализация: тревожность, депрессия, семейные конфликты"},
+    {
+        name: "Али Курбанов",
+        direction: "Психотерапевт",
+        city: "Ташкент",
+        experience: "10 лет",
+        description: "тревожность, депрессия, семейные конфликты",
+        img: "/images/spec1.png",
+    },
+    {
+        name: "Анна Иванова",
+        direction: "Психолог",
+        city: "Москва",
+        experience: "7 лет",
+        description: "стресс, мотивация, личностный рост",
+        img: "/images/spec2.png",
+    },
+    {
+        name: "Иван Петров",
+        direction: "Клинический психолог",
+        city: "Санкт-Петербург",
+        experience: "12 лет",
+        description: "кризисные состояния, психосоматика",
+        img: "/images/spec3.png",
+    },
+    {
+        name: "Иван Петров",
+        direction: "Клинический психолог",
+        city: "Санкт-Петербург",
+        experience: "12 лет",
+        description: "кризисные состояния, психосоматика",
+        img: "/images/spec4.png",
+    },
+    {
+        name: "Иван Петров",
+        direction: "Клинический психолог",
+        city: "Санкт-Петербург",
+        experience: "12 лет",
+        description: "кризисные состояния, психосоматика",
+        img: "/images/spec5.png",
+    },
+    {
+        name: "Иван Петров",
+        direction: "Клинический психолог",
+        city: "Санкт-Петербург",
+        experience: "12 лет",
+        description: "кризисные состояния, психосоматика",
+        img: "/images/spec6.png",
+    },
 ];
 
 export default function Specialist() {
@@ -46,9 +88,10 @@ export default function Specialist() {
                             <img
                                 src={spec.img}
                                 alt={spec.name}
-                                className="w-full h-64 object-cover"
+                                className="w-full h-96 object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <div
+                                className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                                 <div className="text-white">
                                     <p className="text-lg font-bold">{spec.name}</p>
                                     <p className="text-sm">{spec.description}</p>

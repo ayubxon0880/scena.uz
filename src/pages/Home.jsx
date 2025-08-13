@@ -1,4 +1,7 @@
 import {Search} from "lucide-react";
+import {useEffect, useState} from "react";
+import Select from "react-select";
+import TestOverlay from "../components/Home/TestOverlay.jsx";
 
 export default function Home() {
     const specialists = [
@@ -7,67 +10,196 @@ export default function Home() {
             direction: "Психотерапевт",
             city: "Ташкент",
             experience: "10 лет",
-            specialization: "тревожность, депрессия, семейные конфликты",
-            img: "/images/doctor.png",
+            description: "тревожность, депрессия, семейные конфликты",
+            img: "/images/spec1.png",
         },
         {
             name: "Анна Иванова",
             direction: "Психолог",
             city: "Москва",
             experience: "7 лет",
-            specialization: "стресс, мотивация, личностный рост",
-            img: "/images/doctor.png",
+            description: "стресс, мотивация, личностный рост",
+            img: "/images/spec2.png",
         },
         {
             name: "Иван Петров",
             direction: "Клинический психолог",
             city: "Санкт-Петербург",
             experience: "12 лет",
-            specialization: "кризисные состояния, психосоматика",
-            img: "/images/doctor.png",
+            description: "кризисные состояния, психосоматика",
+            img: "/images/spec3.png",
+        },
+        {
+            name: "Иван Петров",
+            direction: "Клинический психолог",
+            city: "Санкт-Петербург",
+            experience: "12 лет",
+            description: "кризисные состояния, психосоматика",
+            img: "/images/spec4.png",
+        },
+        {
+            name: "Иван Петров",
+            direction: "Клинический психолог",
+            city: "Санкт-Петербург",
+            experience: "12 лет",
+            description: "кризисные состояния, психосоматика",
+            img: "/images/spec5.png",
+        },
+        {
+            name: "Иван Петров",
+            direction: "Клинический психолог",
+            city: "Санкт-Петербург",
+            experience: "12 лет",
+            description: "кризисные состояния, психосоматика",
+            img: "/images/spec6.png",
         },
     ];
 
+    const optionsLocation = [
+        { value: "tashkent", label: "Ташкент" },
+    ];
+
+    const optionsLanguage = [
+        { value: "uz", label: "O'zbek" },
+        { value: "ru", label: "Русский" },
+        { value: "en", label: "English" }
+    ];
+
+
+
+    const [selectedOptionLocation, setSelectedOptionLocation] = useState(optionsLocation[0]);
+    const [selectedOptionLanguage, setSelectedOptionLanguage] = useState(optionsLanguage[0]);
+
+    const [searchText, setSearchText] = useState("");
+    const [showOverlay, setShowOverlay] = useState(false);
+
+    useEffect(() => {
+        console.log(selectedOptionLocation);
+        console.log(selectedOptionLanguage);
+    },[selectedOptionLocation, selectedOptionLanguage]);
+
     return (
         <div className="w-full">
+            {showOverlay && <TestOverlay onClose={() => setShowOverlay(false)} />}
+
             <section
-                className="relative h-screen bg-cover bg-center flex items-center"
-                style={{backgroundImage: "url('/images/bg-hero.png')"}}
+                className="relative min-h-[70vh] md:min-h-screen bg-cover bg-center flex items-center px-4"
+                style={{ backgroundImage: "url('/images/bg-hero.png')" }}
             >
-                <div className="max-w-6xl mx-40 px-4">
-                    <div className="w-2/3 text-white">
-                        <h1 className="text-6xl font-bold mb-4">
+                <div className="max-w-6xl mx-auto">
+                    <div className="w-full md:w-2/3 text-white">
+                        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
                             Найдите специалиста в области психического здоровья
                         </h1>
-                        <p className="mb-6 text-lg">
+                        <p className="mb-6 text-base md:text-lg">
                             На нашем сайте вы можете найти психиатра, психотерапевта, психолога или сексолога.
                             Используйте фильтры для уточнения поиска и ознакомьтесь с отзывами о специалистах.
                             Читайте статьи в нашем блоге и узнавайте больше о психическом здоровье.
                         </p>
-                        <button className="px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium">
+                        <button
+                            onClick={() => setShowOverlay(true)}
+                            className="px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium"
+                        >
                             Найти специалиста
                         </button>
                     </div>
                 </div>
-
             </section>
 
-            <section className="py-16" id="test">
+            <section className="py-12 md:py-16" id="search">
                 <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-center text-3xl font-bold mb-4">Быстрый поиск</h2>
-                    <br></br>
+                    <h2 className="text-center text-2xl md:text-3xl font-bold mb-4">Быстрый поиск</h2>
+
                     <div className="flex flex-wrap gap-3 justify-center mb-6">
-                        {["язык", "город", "офлайн", "спец."].map((item, i) => (
-                            <button
-                                key={i}
-                                className="px-14 py-3 rounded-2xl bg-[#d5beb0] text-white hover:bg-[#7A5240] transition"
-                            >
-                                {item}
-                            </button>
-                        ))}
-                        <button className="p-2 rounded-full border border-gray-300 hover:bg-gray-200">
-                            <Search size={20}/>
+                        {/*{["город", "офлайн", "онлайн", "язык"].map((item, i) => (*/}
+                        <button
+                            className="px-6 md:px-14 py-3 rounded-2xl bg-[#d5beb0] text-white hover:bg-[#7A5240] transition"
+                            onClick={() => setSearchText("офлайн")}
+                        >
+                            офлайн
                         </button>
+                        <button
+                            className="px-6 md:px-14 py-3 rounded-2xl bg-[#d5beb0] text-white hover:bg-[#7A5240] transition"
+                            onClick={() => setSearchText("онлайн")}
+                        >
+                            онлайн
+                        </button>
+                        <Select
+                            defaultValue={optionsLocation[0]}
+                            onChange={(val) => setSelectedOptionLocation(val)}
+                            options={optionsLocation}
+                            styles={{
+                                control: (provided, state) => ({
+                                    ...provided,
+                                    backgroundColor: "#d5beb0",
+                                    borderRadius: "1rem", // rounded-2xl
+                                    padding: "0.25rem 0.5rem", // py-3 px-6 ga moslashtirilgan
+                                    border: "none",
+                                    minHeight: "48px", // py-3'ga mos keladi
+                                    boxShadow: state.isFocused ? "0 0 0 2px #7A5240" : "none",
+                                    "&:hover": {
+                                        backgroundColor: "#7A5240",
+                                        color: "#fff",
+                                    },
+                                }),
+                                singleValue: (provided) => ({
+                                    ...provided,
+                                    color: "#fff",
+                                    fontWeight: "500",
+                                }),
+                                dropdownIndicator: (provided) => ({
+                                    ...provided,
+                                    color: "#7A5240",
+                                    "&:hover": {
+                                        color: "#7A5240",
+                                    },
+                                }),
+                                indicatorSeparator: () => ({ display: "none" }),
+                                menu: (provided) => ({
+                                    ...provided,
+                                    borderRadius: "0.75rem",
+                                    overflow: "hidden",
+                                }),
+                            }}
+                        />
+                        <Select
+                            defaultValue={optionsLanguage[0]}
+                            onChange={(val) => setSelectedOptionLanguage(val)}
+                            options={optionsLanguage}
+                            styles={{
+                                control: (provided, state) => ({
+                                    ...provided,
+                                    backgroundColor: "#d5beb0",
+                                    borderRadius: "1rem", // rounded-2xl
+                                    padding: "0.25rem 0.5rem", // py-3 px-6 ga moslashtirilgan
+                                    border: "none",
+                                    minHeight: "48px", // py-3'ga mos keladi
+                                    boxShadow: state.isFocused ? "0 0 0 2px #7A5240" : "none",
+                                    "&:hover": {
+                                        backgroundColor: "#7A5240",
+                                        color: "#fff",
+                                    },
+                                }),
+                                singleValue: (provided) => ({
+                                    ...provided,
+                                    color: "#fff",
+                                    fontWeight: "500",
+                                }),
+                                dropdownIndicator: (provided) => ({
+                                    ...provided,
+                                    color: "#7A5240",
+                                    "&:hover": {
+                                        color: "#7A5240",
+                                    },
+                                }),
+                                indicatorSeparator: () => ({ display: "none" }),
+                                menu: (provided) => ({
+                                    ...provided,
+                                    borderRadius: "0.75rem",
+                                    overflow: "hidden",
+                                }),
+                            }}
+                        />
                     </div>
 
                     <div className="flex items-center border rounded-lg overflow-hidden mb-8 mx-auto">
@@ -75,14 +207,16 @@ export default function Home() {
                             type="text"
                             placeholder="сексолог Евгений"
                             className="flex-1 p-3 outline-none"
+                            value={searchText}
+                            onChange={(e) => setSearchText(e.target.value)}
                         />
                         <div className="p-3 text-gray-500">
                             <Search size={20}/>
                         </div>
                     </div>
 
-                    <h3 className="text-center text-3xl font-bold mb-4">Опишите ваше состояние</h3>
-                    <div className="flex border rounded-lg overflow-hidden max-w-xl">
+                    <h3 className="text-center text-2xl md:text-3xl font-bold mb-4">Опишите ваше состояние</h3>
+                    <div className="flex border rounded-lg overflow-hidden max-w-xl mx-auto">
                         <input
                             type="text"
                             placeholder="Проблемы в отношениях"
@@ -93,10 +227,8 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <br></br>
-
-                    <h4 className="text-lg font-bold mb-4">частые запросы</h4>
-                    <ul className="grid grid-cols-1 sm:grid-cols-1 gap-2 mb-12">
+                    <h4 className="text-lg font-bold mt-8 mb-4">частые запросы</h4>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mb-12">
                         {[
                             "Тревога",
                             "Депрессия",
@@ -123,7 +255,7 @@ export default function Home() {
                                 <img
                                     src={spec.img}
                                     alt={spec.name}
-                                    className="w-full h-96 object-cover"
+                                    className="w-full h-72 md:h-96 object-cover"
                                 />
                                 <div
                                     className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
@@ -138,38 +270,34 @@ export default function Home() {
                 </div>
             </section>
 
-
-            <section className="py-16">
+            {/* CONTACT */}
+            <section className="py-12 md:py-16">
                 <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-4xl font-bold mb-6 text-center">контактная информация</h2>
-                    <div className="flex flex-col gap-4 max-w-sm">
-                        <h2 className="text-2xl font-bold text-center">номер телефона</h2>
+                    <h2 className="text-2xl md:text-4xl font-bold mb-6 text-center">контактная информация</h2>
+                    <div className="flex flex-col gap-4 max-w-sm mx-auto">
+                        <h2 className="text-xl md:text-2xl font-bold text-center">номер телефона</h2>
                         <button className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full">
                             Позвонить
                         </button>
-                        <h2 className="text-2xl font-bold text-center">эл. почта</h2>
-                        <button className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full">
+                        <h2 className="text-xl md:text-2xl font-bold text-center">эл. почта</h2>
+                        <button className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full break-words">
                             admin@psychotherapy.uz
                         </button>
                     </div>
                 </div>
             </section>
 
-
-            <section className="h-96 flex justify-center my-14">
-                <div className="w-2/3 h-full rounded-2xl overflow-hidden shadow-lg">
+            {/* MAP */}
+            <section className="h-64 md:h-96 flex justify-center my-14 px-4">
+                <div className="w-full md:w-2/3 h-full rounded-2xl overflow-hidden shadow-lg">
                     <iframe
-                        src="https://yandex.uz/map-widget/v1/-/CHtEeX9Z"
+                        src="https://yandex.uz/map-widget/v1/-/CHtE7B02"
                         width="100%"
                         height="100%"
                         allowFullScreen={true}
                     ></iframe>
                 </div>
             </section>
-
-
-
-
         </div>
     );
 }
