@@ -6,8 +6,8 @@ export default function Navbar() {
 
     const menuItems = [
         { name: "Главная", href: "/" },
-        { name: "Клиника", href: "/clinic" },
-        { name: "Специалист", href: "/specialist" },
+        { name: "Клиника", href: "/clinics" },
+        { name: "Специалист", href: "/specialists" },
         { name: "Сообщество", href: "/community" },
         { name: "О нас", href: "/about" },
     ];

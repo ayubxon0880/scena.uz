@@ -13,7 +13,7 @@ export default function App() {
                 <Navbar/>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/about-us" element={<AboutUs />} />
+                    <Route path="/about" element={<AboutUs />} />
                     <Route path="/clinics" element={<Clinics />} />
                     <Route path="/community" element={<Community />} />
                     <Route path="/specialists" element={<Specialist />} />

@@ -143,7 +143,7 @@ function TopSpecialists() {
 
                     {/* Book button */}
                     <button
-                        className="mt-5 bg-[#4B3A34] text-white px-6 py-2 rounded-lg hover:bg-[#3c2d28] transition w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#4B3A34]"
+                        className="mt-5 bg-[#d5beb0] text-white px-6 py-2 rounded-lg hover:bg-[#3c2d28] transition w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#4B3A34]"
                         aria-label={`Записаться к ${current.name}`}
                     >
                         Записаться

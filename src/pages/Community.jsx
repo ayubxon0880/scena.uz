@@ -11,8 +11,15 @@ export default function Community() {
             name: "Точка опоры",
             direction: "Психотерапия, психология",
             city: "Ташкент",
-            description:
-                'Психотерапевтическое сообщество "Точка опоры" — объединение сертифицированных специалистов: психологов, психотерапевтов и коучей. Работаем в разных подходах — КПТ, гештальт, психоанализ. Регулярные супервизии и обучение внутри сообщества.',
+            description: [
+                'Современный центр',
+                'Предоставление и приказ речи.',
+                'Обездвижение, остановка и учет.',
+                'Медицинский опыт с экономики',
+                'Учебной работы с применением',
+                'распределенных диагностиков,',
+                'ГИТЭО зависимостью',
+            ],
             image: "/images/doctor.png",
         },
         {
@@ -20,8 +27,15 @@ export default function Community() {
             name: "Точка опоры",
             direction: "Психотерапия, психология",
             city: "Ташкент",
-            description:
-                'Психотерапевтическое сообщество "Точка опоры" — объединение сертифицированных специалистов: психологов, психотерапевтов и коучей. Работаем в разных подходах — КПТ, гештальт, психоанализ. Регулярные супервизии и обучение внутри сообщества.',
+            description: [
+                'Современный центр',
+                'Предоставление и приказ речи.',
+                'Обездвижение, остановка и учет.',
+                'Медицинский опыт с экономики',
+                'Учебной работы с применением',
+                'распределенных диагностиков,',
+                'ГИТЭО зависимостью',
+            ],
             image: "/images/doctor.png",
         },
     ];
@@ -54,22 +68,26 @@ export default function Community() {
                         <img
                             src={c.image}
                             alt={c.name}
-                            className="w-full md:w-64 h-48 object-cover rounded-lg"
+                            className="w-full md:w-64 h-96 object-cover rounded-lg"
                         />
 
                         <div className="flex flex-col justify-between h-full flex-1">
                             <div>
                                 <h3 className="text-lg font-semibold">{c.name}</h3>
-                                <p className="text-sm text-gray-600 mt-1">
-                                    <span className="font-semibold">Направление:</span>{" "}
-                                    {c.direction}
-                                </p>
+                                <div className="border-t border-gray-200 pt-4">
+                                    <h4 className="font-semibold mb-2">Главное:</h4>
+                                    <ul className="text-sm text-gray-700 space-y-1">
+                                        {c.description.map((item, index) => (
+                                            <li key={index}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
                                 <p className="text-sm text-gray-600">
                                     <span className="font-semibold">Город:</span> {c.city}
                                 </p>
                                 <p className="text-sm text-gray-700 mt-3">{c.description}</p>
                             </div>
-                            <button className="mt-4 bg-[#6B4226] text-white px-5 py-2 rounded-lg hover:bg-[#5A3620] transition self-start">
+                            <button className="mt-4 bg-[#d5beb0] text-white px-5 py-2 rounded-lg hover:bg-[#5A3620] transition self-start">
                                 вступить
                             </button>
                         </div>
