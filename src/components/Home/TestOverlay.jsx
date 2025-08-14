@@ -3,39 +3,87 @@ import { useState } from "react";
 export default function TestOverlay({ onClose }) {
     const tests = [
         {
-            title: "Тест 1: Эмоциональное состояние",
+            title: "Тест 1",
             questions: [
-                "Чувствуете ли вы тревогу чаще, чем обычно?",
-                "Часто ли у вас бывают перепады настроения?",
-                "Трудно ли вам расслабиться?",
-                "Чувствуете ли вы усталость большую часть времени?"
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                }
             ]
         },
         {
-            title: "Тест 2: Уровень стресса",
+            title: "Тест 2",
             questions: [
-                "Часто ли вы раздражаетесь по мелочам?",
-                "Сложно ли вам концентрироваться?",
-                "Бывает ли у вас бессонница?",
-                "Чувствуете ли вы напряжение в теле?"
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                }
             ]
         },
         {
-            title: "Тест 3: Самооценка",
+            title: "Тест 3",
             questions: [
-                "Вы довольны собой?",
-                "Часто ли вы сравниваете себя с другими?",
-                "Считаете ли вы себя успешным человеком?",
-                "Принимаете ли вы комплименты?"
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                }
             ]
         },
         {
-            title: "Тест 4: Отношения",
+            title: "Тест 4",
             questions: [
-                "Чувствуете ли вы поддержку от близких?",
-                "Легко ли вам говорить о своих чувствах?",
-                "Часто ли у вас бывают конфликты?",
-                "Чувствуете ли вы себя одиноким?"
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                },
+                {
+                    question : "question",
+                    answers: ["ans1", "ans2", "ans3", "ans4"]
+                }
             ]
         }
     ];
@@ -48,6 +96,7 @@ export default function TestOverlay({ onClose }) {
             ...prev,
             [`${currentTest}-${qIndex}`]: value
         }));
+
     };
 
     const nextTest = () => {
@@ -66,9 +115,9 @@ export default function TestOverlay({ onClose }) {
                 <div className="space-y-4 text-left">
                     {tests[currentTest].questions.map((q, i) => (
                         <div key={i}>
-                            <p className="mb-2">{q}</p>
+                            <p className="mb-2">{q.question}</p>
                             <div className="flex gap-2">
-                                {[1, 2, 3, 4, 5].map((num) => (
+                                {q.answers.map((num) => (
                                     <button
                                         key={num}
                                         className={`px-3 py-1 rounded-lg border transition ${
