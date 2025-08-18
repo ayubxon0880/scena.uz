@@ -39,7 +39,7 @@ export default function Footer() {
                             <Instagram size={18} />
                         </a>
                         <a
-                            href="https://t.me/"
+                            href="https://t.me/aalmv"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition"

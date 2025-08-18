@@ -55,6 +55,23 @@ export default function Home() {
         },
     ];
 
+    const [query, setQuery] = useState("");
+
+    const suggestions = [
+        "Тревога",
+        "Депрессия",
+        "Панические атаки",
+        "Страхи и фобии",
+        "Проблемы в отношениях",
+        "Выгорание",
+        "Самооценка",
+        "Проблемы с сексуальной жизнью",
+        "Детские травмы",
+        "Агрессия и раздражительность",
+    ];
+
+
+
     const optionsLocation = [
         { value: "tashkent", label: "Ташкент" },
     ];
@@ -64,8 +81,6 @@ export default function Home() {
         { value: "ru", label: "Русский" },
         { value: "en", label: "English" }
     ];
-
-
 
     const [selectedOptionLocation, setSelectedOptionLocation] = useState(optionsLocation[0]);
     const [selectedOptionLanguage, setSelectedOptionLanguage] = useState(optionsLanguage[0]);
@@ -77,6 +92,8 @@ export default function Home() {
         console.log(selectedOptionLocation);
         console.log(selectedOptionLanguage);
     },[selectedOptionLocation, selectedOptionLanguage]);
+
+
 
     return (
         <div className="w-full">
@@ -220,6 +237,8 @@ export default function Home() {
                         <input
                             type="text"
                             placeholder="Проблемы в отношениях"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
                             className="flex-1 p-3 outline-none"
                         />
                         <div className="p-3 text-gray-500">
@@ -229,19 +248,14 @@ export default function Home() {
 
                     <h4 className="text-lg font-bold mt-8 mb-4">частые запросы</h4>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mb-12">
-                        {[
-                            "Тревога",
-                            "Депрессия",
-                            "Панические атаки",
-                            "Страхи и фобии",
-                            "Проблемы в отношениях",
-                            "Выгорание",
-                            "Самооценка",
-                            "Проблемы с сексуальной жизнью",
-                            "Детские травмы",
-                            "Агрессия и раздражительность",
-                        ].map((item, i) => (
-                            <li key={i}>{item}</li>
+                        {suggestions.map((item, i) => (
+                            <li
+                                key={i}
+                                className="cursor-pointer px-3 py-2 border rounded-lg hover:bg-gray-100"
+                                onClick={() => setQuery(item)}
+                            >
+                                {item}
+                            </li>
                         ))}
                     </ul>
 
@@ -276,13 +290,16 @@ export default function Home() {
                     <h2 className="text-2xl md:text-4xl font-bold mb-6 text-center">контактная информация</h2>
                     <div className="flex flex-col gap-4 max-w-sm mx-auto">
                         <h2 className="text-xl md:text-2xl font-bold text-center">номер телефона</h2>
-                        <button className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full">
+                        <a href="tel:+998909689197" className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full block text-center">
                             Позвонить
-                        </button>
+                        </a>
+
                         <h2 className="text-xl md:text-2xl font-bold text-center">эл. почта</h2>
-                        <button className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full break-words">
+
+                        <a href="mailto:admin@psychotherapy.uz" className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full break-words block text-center">
                             admin@psychotherapy.uz
-                        </button>
+                        </a>
+
                     </div>
                 </div>
             </section>
