@@ -1,35 +1,24 @@
-export default function AboutUs() {
+
+export default function CommunitySection() {
     return (
-        <section className="max-w-6xl mx-auto p-4 my-12">
-            <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-sm text-center md:text-left">
-                {/* Title */}
-                <h2 className="text-2xl font-semibold mb-6">О нас</h2>
-
-                {/* Text content */}
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                    Наш проект — это платформа для поиска специалистов в области психического здоровья.
-                    Мы стремимся помочь людям найти квалифицированных специалистов, обеспечивая удобный
-                    и надёжный поиск.
-                </p>
-                <p className="text-gray-700 mb-8 leading-relaxed">
-                    Наша миссия — поддержка психического здоровья и благополучия людей через доступ
-                    к качественной помощи специалистов.
-                </p>
-
-                {/* Image */}
-                <div className="flex mb-6">
-                    <img
-                        src="/images/about-us.png"
-                        alt="О нас"
-                        className="w-full max-w-md rounded-2xl object-cover"
-                    />
+        <section className="bg-white py-20">
+            <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-6">
+                <div className="flex flex-col gap-4 text-center md:text-left max-w-md">
+                    <h2 className="text-4xl md:text-5xl font-bold leading-snug">
+                        Присоединяйся <br />
+                        к нашему <span className="text-yellow-400">сообществу</span>
+                    </h2>
+                    <a href={"https://t.me/+tPEECv6hU_VhNWIy"} className="w-64 px-8 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow hover:bg-blue-600 transition">
+                        перейти
+                    </a>
                 </div>
 
-                {/* Button */}
-                <div className="flex justify-start">
-                    <button className="bg-[#d5beb0] hover:bg-[#a5beb0] text-white px-6 py-3 rounded-lg">
-                        записаться на прием
-                    </button>
+                <div className="relative bg-amber-300 rounded-full flex justify-center items-center w-72 h-72 md:w-96 md:h-96 overflow-visible">
+                    <img
+                        src="/images/hero3.png"
+                        alt="Mascot"
+                        className="absolute w-[110%] md:w-[120%] z-10"
+                    />
                 </div>
             </div>
         </section>

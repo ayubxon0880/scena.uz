@@ -1,57 +1,46 @@
-import { Instagram, Send } from "lucide-react"; // Send → Telegram ikonka
-
 export default function Footer() {
     return (
-        <footer style={{ backgroundColor: "#4C3837" }} className="text-white">
-            <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
-                
-                <div>
-                    <h2 className="text-lg font-bold mb-2">Psychoterapy</h2>
-                    <p className="text-sm text-gray-300">
-                        Мы помогаем людям заботиться о своём психическом здоровье и находить квалифицированных специалистов.
-                    </p>
-                </div>
+        <footer className="w-full bg-gray-900 text-white py-12">
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-stretch gap-12 px-6">
+                <div className="flex-1 flex flex-col justify-center space-y-8">
+                    {/* Address */}
+                    <div>
+                        <h2 className="text-2xl font-bold mb-2">Адрес</h2>
+                        <p className="text-lg text-gray-300">
+                            <a
+                                href="https://yandex.uz/maps/-/CLAUzULG"
+                                className="text-lg text-gray-300 hover:text-white transition-colors"
+                            >
+                                Ташкент, ул. Махатмы Ганди, 44
+                            </a>
+                        </p>
+                    </div>
 
-                <div>
-                    <h3 className="font-semibold mb-3">Навигация</h3>
-                    <ul className="space-y-2 text-sm">
-                        <li><a href="/" className="hover:underline">Главная</a></li>
-                        <li><a href="/clinics" className="hover:underline">Клиники</a></li>
-                        <li><a href="/specialists" className="hover:underline">Специалисты</a></li>
-                        <li><a href="/community" className="hover:underline">Сообщество</a></li>
-                        <li><a href="/about" className="hover:underline">О нас</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 className="font-semibold mb-3">Контакты</h3>
-                    <p className="text-sm text-gray-300">📍 Ташкент, Узбекистан</p>
-                    <p className="text-sm text-gray-300">📞 +998 90 968 91 97</p>
-                    <p className="text-sm text-gray-300">✉ admin@psychoterapy.uz</p>
-
-                    <div className="flex space-x-4 mt-3">
-                        <a
-                            href="https://www.instagram.com/psychotherapy_uz"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition"
-                        >
-                            <Instagram size={18} />
-                        </a>
-                        <a
-                            href="https://t.me/aalmv"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition"
-                        >
-                            <Send size={18} />
-                        </a>
+                    <div>
+                        <h2 className="text-2xl font-bold mb-2">Свяжитесь с нами</h2>
+                        <p>
+                            <a
+                                href="tel:+998938778181"
+                                className="text-lg text-gray-300 hover:text-white transition-colors"
+                            >
+                                +998 93 877 81 81
+                            </a>
+                        </p>
+                        <p>
+                            <a
+                                href="mailto:info@scena.uz"
+                                className="text-lg text-gray-300 hover:text-white transition-colors"
+                            >
+                                info@scena.uz
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <div className="border-t border-gray-500 text-center py-4 text-xs text-gray-300">
-                © {new Date().getFullYear()} Psychoterapy. Все права защищены.
+            {/* Bottom */}
+            <div className="mt-12 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+                © {new Date().getFullYear()} Scena. Все права защищены.
             </div>
         </footer>
     );
