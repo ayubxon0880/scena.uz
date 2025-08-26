@@ -4,12 +4,16 @@ import Footer from "./components/Footer.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Contact from "./pages/Contact.jsx";
+import usePageTracking from "./components/Tracking.js";
 
 export default function App() {
+    usePageTracking();
+
     return (
         <Router>
             <Navbar/>
             <div className="pt-16">
+
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/contact" element={<Contact/>}/>
